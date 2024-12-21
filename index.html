@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Library Catalog</h1>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search by author or title">
+            <button onclick="searchBooks()">Search</button>
+            <button onclick="showAddBookForm()">Add Book</button>
+        </div>
+        <div id="book-list" class="book-list"></div>
+    </div>
+
+    <div id="book-details" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookDetails()">&times;</span>
+
+            <div class="container">
+                <h2 id="book-title"></h2>
+                <p id="book-author"></p>
+                <p id="book-year"></p>
+
+                <img id="book-image" src="" alt="">
+
+                <input type="checkbox" id="like-button" class="like-button">
+                <label for="like-button" class="like-button-label"></label>
+                <div class="price">מחיר: ₪99.90</div>
+                <div class="quantity-container">
+                    <label for="quantity" class="quantity-label">:כמות </label>
+                    <input type="number" id="quantity" name="quantity" class="quantity-input" min="1" value="1">
+
+                </div>
+                <button class="buy-button">קנה עכשיו</button>
+                <button class="add-to-cart-button">הוסף לעגלה</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="add-book-form" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddBookForm()">&times;</span>
+            <h2>Add Book</h2>
+            <form id="book-form">
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" required>
+                <label for="img">Image URL:</label>
+                <input type="text" id="img" name="img" placeholder="Optional">
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<footer>
+    <img src="https://yefe.co.il/wp-content/uploads/2024/06/%D7%94%D7%A0%D7%A4%D7%A9%D7%AA-%D7%A1%D7%A4%D7%A8%D7%99%D7%9D.gif"
+        alt="Description of the GIF">
+</footer>
+
+</html>
